@@ -7,7 +7,7 @@ const AboutPage = () => (
     <p>
       This site was made using create-react-app and relies on bootstrap for
       styling. All information on this site is courtesy of the
-      <Link to="https://developer.riotgames.com/">Riot Games API.</Link>
+      <a href="https://developer.riotgames.com/"> Riot Games API.</a>
     </p>
     <Link to="/">Go Home</Link>
   </div>
