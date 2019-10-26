@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const StatsPage = () => {
+  const [request, setRequest] = useState({
+    region: "",
+    name: ""
+  });
+
   const getPlayer = e => {
     e.preventDefault();
     axios
@@ -31,18 +36,26 @@ const StatsPage = () => {
             className="form-control"
             id="name"
             placeholder="Enter Player Name..."
+            value={request.name}
           />
         </div>
         <div className="form-group">
           <label for="region">Region:</label>
-          <select type="text" id="region" className="form-control">
+          <select type="text" id="region" className="form-control" value="request.region">
             <option value="" selected disabled hidden>
               Choose Region
             </option>
-            <option>NA1</option>
-            <option>EU</option>
-            <option>Asia</option>
-            <option>Something Else</option>
+            <option value="na1">North America</option>
+            <option value="eun1">Europe Nordic & East</option>
+            <option value="euw1">Europe West</option>
+            <option value="tr">Turkey</option>
+            <option value="la1">Latin America 1</option>
+            <option value="la2">Latin America 2</option>
+            <option value="br1">Brazil</option>
+            <option value="oc1">Oceania</option>
+            <option value="jp1">Japan</option>
+            <option value="kr">Korea</option>
+            <option value="ru">Russia</option>
           </select>
         </div>
       </form>
