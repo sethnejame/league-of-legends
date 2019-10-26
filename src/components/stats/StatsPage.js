@@ -32,7 +32,7 @@ const StatsPage = () => {
     <div className="jumbotron">
       <h2>Stats</h2>
       <p>Below you can search for stats on your favorite LoL players.</p>
-      <form onSubmit={getPlayer()}>
+      <form onSubmit={e => getPlayer()}>
         <div className="form-group">
           <label for="name">Player Name:</label>
           <input
@@ -42,7 +42,7 @@ const StatsPage = () => {
             name="name"
             placeholder="Enter Player Name..."
             value={req.name}
-            onChange={e => handleChange()}
+            onChange={handleChange}
           />
         </div>
         <div className="form-group">
@@ -53,7 +53,7 @@ const StatsPage = () => {
             name="region"
             className="form-control"
             value={req.region}
-            onChange={e => handleChange()}
+            onChange={handleChange}
           >
             <option value="" selected disabled hidden>
               Choose Region
