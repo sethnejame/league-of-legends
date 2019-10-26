@@ -6,6 +6,7 @@ import AboutPage from "./components/about/AboutPage";
 const App = () => (
   <>
     <Route exact path="/" component={HomePage} />
+    <Route path="/stats" component={StatsPage} />
     <Route path="/about" component={AboutPage} />
   </>
 );
