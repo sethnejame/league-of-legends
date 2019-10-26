@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { jsxNamespacedName } from "@babel/types";
 
 const StatsPage = () => {
-  const [request, setRequest] = useState({
+  const [req, setReq] = useState({
     region: "",
     name: ""
   });
 
   const handleChange = e => {
-    setRequest({ [e.target.name]: e.target.value });
+    setReq({ [e.target.name]: e.target.value });
   }
 
   const getPlayer = e => {
     e.preventDefault();
     axios
       .get(
-        `https://${region}.api.riotgames./com/lol/summoner/v4/summoners/by-name/${name}`,
+        `https://${req.region}.api.riotgames./com/lol/summoner/v4/summoners/by-name/${req.name}`,
         {
           headers: {
             "X-Riot-Token": process.env.REACT_APP_PUBG_API_KEY
@@ -42,7 +41,7 @@ const StatsPage = () => {
             id="name"
             name="name"
             placeholder="Enter Player Name..."
-            value={request.name}
+            value={req.name}
             onChange={e => handleChange()}
           />
         </div>
@@ -53,7 +52,7 @@ const StatsPage = () => {
             id="region"
             name="region"
             className="form-control"
-            value="request.region"
+            value={req.region}
             onChange={e => handleChange()}
           >
             <option value="" selected disabled hidden>
