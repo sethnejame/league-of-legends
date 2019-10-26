@@ -17,7 +17,7 @@ const StatsPage = () => {
     e.preventDefault();
     axios
       .get(
-        `https://${req.region}.api.riotgames./com/lol/summoner/v4/summoners/by-name/${req.name}`,
+        `https://cors-anywhere.herokuapp.com/https://${req.region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${req.name}`,
         {
           headers: {
             "X-Riot-Token": process.env.REACT_APP_PUBG_API_KEY
