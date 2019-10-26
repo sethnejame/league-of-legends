@@ -34,7 +34,7 @@ const StatsPage = () => {
       <p>Below you can search for stats on your favorite LoL players.</p>
       <form onSubmit={e => getPlayer()}>
         <div className="form-group">
-          <label for="name">Player Name:</label>
+          <label>Player Name:</label>
           <input
             type="text"
             className="form-control"
@@ -46,7 +46,7 @@ const StatsPage = () => {
           />
         </div>
         <div className="form-group">
-          <label for="region">Region:</label>
+          <label>Region:</label>
           <select
             type="text"
             id="region"
@@ -55,7 +55,7 @@ const StatsPage = () => {
             value={req.region}
             onChange={handleChange}
           >
-            <option value="" selected disabled hidden>
+            <option value="" disabled hidden>
               Choose Region
             </option>
             <option value="na1">North America</option>
