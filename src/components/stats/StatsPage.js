@@ -7,9 +7,14 @@ const StatsPage = () => {
     name: ""
   });
 
+  const [player, setPlayer] = useState({
+    name: "",
+    summonerLevel: ""
+  });
+
   const handleChange = e => {
     const newReq = { ...req, [e.target.name]: e.target.value };
-    setReq({...newReq});
+    setReq({ ...newReq });
     console.log(req);
   };
 
@@ -26,6 +31,11 @@ const StatsPage = () => {
       )
       .then(response => {
         console.log(response.data);
+        setPlayer({
+          name: response.data.name,
+          summonerLevel: response.data.summonerLevel
+        });
+        console.log(player.name);
       })
       .catch(err => console.log(err));
   };
@@ -77,6 +87,24 @@ const StatsPage = () => {
           Find Player
         </button>
       </form>
+      <div className="card mt-4 py-4" id="results">
+        {player.name !== "" ? (
+          <ul>
+            <li>
+              Player <strong style={{ color: "green" }}>{player.name}</strong>{" "}
+              has been found!
+            </li>
+            <li>
+              Summer level:{" "}
+              <strong style={{ color: "purple" }}>
+                {player.summonerLevel}
+              </strong>
+            </li>
+          </ul>
+        ) : (
+          <div></div>
+        )}
+      </div>
     </div>
   );
 };
