@@ -95,7 +95,7 @@ const StatsPage = () => {
               has been found!
             </li>
             <li>
-              Summer level:{" "}
+              Summoner level:{" "}
               <strong style={{ color: "purple" }}>
                 {player.summonerLevel}
               </strong>
