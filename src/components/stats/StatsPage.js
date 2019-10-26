@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { jsxNamespacedName } from "@babel/types";
 
 const StatsPage = () => {
   const [request, setRequest] = useState({
     region: "",
     name: ""
   });
+
+  const handleChange = e => {
+    setRequest({ [e.target.name]: e.target.value });
+  }
 
   const getPlayer = e => {
     e.preventDefault();
@@ -35,13 +40,22 @@ const StatsPage = () => {
             type="text"
             className="form-control"
             id="name"
+            name="name"
             placeholder="Enter Player Name..."
             value={request.name}
+            onChange={e => handleChange()}
           />
         </div>
         <div className="form-group">
           <label for="region">Region:</label>
-          <select type="text" id="region" className="form-control" value="request.region">
+          <select
+            type="text"
+            id="region"
+            name="region"
+            className="form-control"
+            value="request.region"
+            onChange={e => handleChange()}
+          >
             <option value="" selected disabled hidden>
               Choose Region
             </option>
