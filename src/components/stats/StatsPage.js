@@ -33,7 +33,7 @@ const StatsPage = () => {
     <div className="jumbotron">
       <h2>Stats</h2>
       <p>Below you can search for stats on your favorite LoL players.</p>
-      <form>
+      <form onSubmit={getPlayer()}>
         <div className="form-group">
           <label for="name">Player Name:</label>
           <input
@@ -72,6 +72,7 @@ const StatsPage = () => {
             <option value="ru">Russia</option>
           </select>
         </div>
+        <button type="submit" className="btn btn-primary">Find Player</button>
       </form>
     </div>
   );
