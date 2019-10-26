@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import HomePage from "./components/home/HomePage";
-import StatsPage from "./components/home/StatsPage";
+import StatsPage from "./components/stats/StatsPage";
 import AboutPage from "./components/about/AboutPage";
 
 const App = () => (
