@@ -8,8 +8,10 @@ const StatsPage = () => {
   });
 
   const handleChange = e => {
-    setReq({ [e.target.name]: e.target.value });
-  }
+    const newReq = { ...req, [e.target.name]: e.target.value };
+    setReq({...newReq});
+    console.log(req);
+  };
 
   const getPlayer = e => {
     e.preventDefault();
@@ -71,7 +73,9 @@ const StatsPage = () => {
             <option value="ru">Russia</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary">Find Player</button>
+        <button type="submit" className="btn btn-primary">
+          Find Player
+        </button>
       </form>
     </div>
   );
